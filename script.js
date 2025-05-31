@@ -2040,18 +2040,22 @@ const gameData = {
 }
 ],
   common_prefixes: [
-    "anti-", "auto-", "bi-", "co-", "de-", "dis-", "ex-", "hyper-", "il-", "im-",
-    "in-", "inter-", "ir-", "macro-", "mal-", "mega-", "micro-", "mini-", "mis-",
-    "mono-", "multi-", "neo-", "non-", "out-", "over-", "poly-", "post-", "pre-",
-    "pro-", "re-", "semi-", "sub-", "super-", "tele-", "trans-", "un-", "under-"
+  "anti-", "auto-", "bi-", "co-", "de-", "dis-", "ex-", "hyper-", "il-", "im-",
+  "in-", "inter-", "ir-", "intro-", "iso-",   // ← added "intro-" & "iso-"
+  "macro-", "mal-", "mega-", "micro-", "mini-", "mis-", "mono-", "multi-",
+  "neo-", "non-", "out-", "over-", "per-",      // ← added "per-"
+  "poly-", "post-", "pre-", "pro-", "re-", "sur-", "sus-", "sup-", // ← added "sur-", "sus-", "sup-"
+  "signi-", "orig-",   // ← added "signi-" & "orig-"
+  "semi-", "sub-", "super-", "tele-", "trans-", "un-", "under-"
   ],
   common_suffixes: [
-    "-able", "-acy", "-al", "-ance", "-ancy", "-ant", "-ation", "-ator", "-dom", "-en",
-    "-ence", "-ent", "-er", "-esque", "-ette", "-fold", "-free", "-ful", "-graph", "-hood",
-    "-ian", "-ible", "-ic", "-ify", "-ing", "-ion", "-ish", "-ism", "-ist", "-ite",
-    "-ition", "-ity", "-ive", "-ize", "-less", "-like", "-logy", "-ly", "-meter", "-monger",
-    "-ness", "-nomy", "-oid", "-or", "-ous", "-pathy", "-phone", "-phobia", "-proof", "-scope",
-    "-ship", "-sion", "-some", "-speak", "-sphere", "-tude", "-tion", "-ward", "-wise", "-worthy", "-y"
+  "-able", "-acy", "-al", "-ance", "-ancy", "-ant", "-ation", "-ator", "-dom", "-en",
+  "-ence", "-ent", "-er", "-esque", "-ette", "-fold", "-free", "-ful", "-graph", "-hood",
+  "-ian", "-ible", "-ic", "-ify", "-ing", "-ion", "-ish", "-ism", "-ist", "-ite",
+  "-ition", "-ity", "-ive", "-ize", "-less", "-like", "-logy", "-ly", "-meter", "-monger",
+  "-ness", "-nomy", "-oid", "-or", "-ory",  // (you may already have "-ory" here)
+  "-ous", "-pathy", "-phone", "-phobia", "-proof", "-scope",
+  "-ship", "-sion", "-some", "-speak", "-sphere", "-tude", "-tion", "-ward", "-wise", "-worthy", "-y"
   ]
 };
 
