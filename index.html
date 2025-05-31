@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Word Weaver</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header-container">
+        <!-- Main title -->
+        <h1>The Word Weaver 2</h1>
 
+        <!-- New subtitle and italic description -->
+        <h2 class="subtitle">Going all the Way</h2>
+        <p class="subtitle-text">
+            <em>Word formation material from the Proficiency (C2) and Panhellenic Exams (B2–C2) from 2005 onwards</em>
+        </p>
+
+        <!-- Updated credit line (font-size increased) -->
+        <div class="credit-line">
+            Created by Panagiotis Domvros 2025 (CC BY-NC)<br>
+            <strong>English Teacher – Teacher Trainer</strong><br>
+            Principal of 1st Middle School of Pylea
+        </div>
+
+        <!-- Original teacher avatar (if still used) -->
+        <img src="teacher.png" alt="Teacher Avatar" class="teacher-image">
+
+        <!-- New “watching text” image in top-right corner -->
+        <img src="teacher_watching_text.png"
+             alt="Your Teacher is Watching Your Every Move!!!"
+             class="watching-text-image">
+    </div>
+
+    <!-- ===========================
+         Base-Word Selection Screen
+         =========================== -->
+    <div id="wordSelectionScreen" class="screen">
+        <h2>Choose Your Base Word</h2>
+        <p style="text-align: center; margin-bottom: 25px;">
+            Click on a word to start building!
+        </p>
+        <div class="word-selection-grid" id="baseWordSelectionGrid">
+            <!-- Buttons for each base word will be injected here by script.js -->
+        </div>
+    </div>
+
+    <!-- ===========================
+         Game Screen (Hidden by Default)
+         =========================== -->
+    <div id="gameScreen" class="screen hidden">
+        <div class="main-game-area">
+            <p style="text-align: center; margin-bottom: 25px;">
+                Build words by clicking affixes and the base word!
+            </p>
+
+            <!-- Base word (e.g. “CREATE”) appears here -->
+            <div class="base-word-display" id="baseWordDisplay"></div>
+
+            <!-- Where prefix + base + suffix show up -->
+            <div class="section-header">Word Construction Area</div>
+
+            <!-- ✎ Edit button and hidden input for manual override -->
+            <button id="editWordBtn" class="small-btn">✎ Edit</button>
+            <input type="text" id="manualWordInput" class="hidden" />
+
+            <div class="word-construction-area" id="wordConstructionArea">
+                <!-- JavaScript will insert a <span class="construction-part base">…</span> here -->
+            </div>
+
+            <!-- Buttons for “Build Word”, “Reset Word”, “Next Base Word” -->
+            <div class="game-buttons">
+                <button id="buildWordBtn">Build Word</button>
+                <button id="resetWordBtn">Reset Word</button>
+                <button id="nextWordBtn">Next Base Word</button>
+            </div>
+
+            <!-- Feedback & Score -->
+            <div class="feedback" id="feedbackMessage"></div>
+            <div class="score-display" id="scoreDisplay">
+                Score: 0 | Words Found: 0 / 0
+            </div>
+
+            <!-- ===== Prefix List ===== -->
+            <div class="section-header">Prefixes</div>
+            <div class="affix-list" id="prefixList"></div>
+
+            <!-- ===== Suffix List ===== -->
+            <div class="section-header">Suffixes</div>
+            <div class="affix-list" id="suffixList"></div>
+        </div>
+
+        <div class="sidebar">
+            <h2>Your Found Words</h2>
+            <ul class="found-words-list" id="foundWordsList">
+                <!-- JavaScript will prepend <li> items here -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Link to the corrected script.js -->
+    <script src="script.js"></script>
+</body>
+</html>

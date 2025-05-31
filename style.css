@@ -1,0 +1,522 @@
+/* ─────────────────────────────────────────────────────
+   General Body & Header Styles
+   ───────────────────────────────────────────────────── */
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+    color: #333;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
+/* Header */
+.header-container {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    width: 90%;
+    max-width: 900px;
+    box-sizing: border-box;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+
+    /* ── ADDED: allow absolutely positioning the “watching text” image */
+    position: relative;
+}
+
+.header-container h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+/* ── UPDATED: increase credit-line font-size by 50% */
+.credit-line {
+    font-size: 1.2em;    /* was 0.8em */
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.teacher-image {
+    width: 90px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 2px solid #5cb85c;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+/* ─────────────────────────────────────────────────────
+   Screen Containers (wordSelectionScreen & gameScreen)
+   ───────────────────────────────────────────────────── */
+.screen {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 90%;
+    max-width: 900px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.screen.hidden {
+    display: none;
+}
+
+/* ─────────────────────────────────────────────────────
+   Word Selection Screen Specific Styles
+   ───────────────────────────────────────────────────── */
+#wordSelectionScreen h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.word-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+.word-select-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.word-select-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────────────────
+   Game Screen (Main) Specific Styles
+   ───────────────────────────────────────────────────── */
+#gameScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gameScreen h1 {
+    display: none;
+}
+
+.section-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #34495e;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.base-word-display {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* =============================================
+   WORD CONSTRUCTION AREA & BUTTONS SPACING SOLUTION
+   ============================================= */
+
+.word-construction-container {
+    width: 100%;
+    margin-bottom: 30px; /* Increased space below construction area */
+}
+
+.word-construction-area {
+    min-height: 90px; /* Slightly taller */
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px; /* More padding */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px; /* Consistent gap with affix list */
+    background-color: #f8f8f8;
+    margin-bottom: 25px; /* Space before buttons */
+}
+
+/* Construction parts - updated to match affix pills */
+.construction-part {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    height: min-content;
+    transition: all 0.2s ease;
+}
+
+/* Button container adjustments */
+.game-buttons-container {
+    width: 100%;
+    margin-top: 0; /* Reset any default margin */
+    padding-top: 15px; /* Space above buttons */
+    border-top: 1px solid #eee; /* Visual separation */
+}
+
+.game-buttons {
+    display: flex;
+    gap: 15px; /* Increased button spacing */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* =============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================= */
+@media (max-width: 768px) {
+    .word-construction-area {
+        padding: 15px;
+        gap: 10px;
+        min-height: 80px;
+        margin-bottom: 20px;
+    }
+    
+    .game-buttons {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .word-construction-area {
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .construction-part {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* =============================================
+   AFFIX PILLS - PROPER WRAPPING & SCROLLING SOLUTION
+   ============================================= */
+
+.affix-list-container {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.affix-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    max-height: 220px;
+    overflow-y: auto;
+    align-content: flex-start;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    
+    /* Critical fix for wrapping */
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.affix-item {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    flex-shrink: 0;
+    margin: 2px 0;
+    line-height: 1.3;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
+    /* Ensures proper wrapping */
+    display: inline-flex;
+    white-space: nowrap;
+    height: min-content;
+}
+
+/* Enhanced scrollbar */
+.affix-list::-webkit-scrollbar {
+    width: 10px;
+}
+.affix-list::-webkit-scrollbar-thumb {
+    background: #95a5a6;
+    border-radius: 5px;
+}
+
+/* =============================================
+   RESPONSIVE FIXES
+   ============================================= */
+@media (max-width: 768px) {
+    .affix-list {
+        gap: 10px;
+        padding: 12px;
+        max-height: 180px;
+    }
+    .affix-item {
+        padding: 7px 14px;
+        font-size: 0.9em;
+    }
+}
+
+/* ─────────────────────────────────────────────────────
+   Game Buttons Styles (Build / Reset / Next)
+   ───────────────────────────────────────────────────── */
+.game-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.game-buttons button {
+    padding: 12px 20px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    flex-grow: 1;
+    min-width: 120px;
+    max-width: 180px;
+}
+
+#buildWordBtn {
+    background-color: #27ae60;
+}
+#buildWordBtn:hover {
+    background-color: #229954;
+}
+
+#resetWordBtn {
+    background-color: #e74c3c;
+}
+#resetWordBtn:hover {
+    background-color: #c0392b;
+}
+
+#nextWordBtn {
+    background-color: #f39c12;
+}
+#nextWordBtn:hover {
+    background-color: #e67e22;
+}
+
+/* ─────────────────────────────────────────────────────
+   Feedback, Score & Found Words Sidebar
+   ───────────────────────────────────────────────────── */
+.feedback {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    min-height: 2em;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.feedback.correct {
+    color: #27ae60;
+    background-color: #e6ffe6;
+    border: 1px solid #27ae60;
+    font-weight: bold;
+}
+
+.feedback.incorrect {
+    color: #e74c3c;
+    background-color: #ffe6e6;
+    border: 1px solid #e74c3c;
+    font-weight: bold;
+}
+
+.score-display {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.found-words-list {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fdfdfd;
+}
+
+.found-words-list li {
+    background-color: #e8f6f3;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-left: 5px solid #2ecc71;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.95em;
+}
+
+.found-words-list li .word {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.found-words-list li .level {
+    display: inline-block;
+    background-color: #9b59b6;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 15px;
+    font-size: 0.75em;
+    margin-right: 10px;
+}
+
+.found-words-list li .level.B2 { background-color: #3498db; }
+.found-words-list li .level.C1 { background-color: #f39c12; }
+.found-words-list li .level.C2 { background-color: #e74c3c; }
+
+.found-words-list li .definition {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* ─────────────────────────────────────────────────────
+   Responsive Adjustments
+   ───────────────────────────────────────────────────── */
+@media (min-width: 768px) {
+    #gameScreen {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    .main-game-area {
+        grid-column: 1 / 2;
+    }
+    .sidebar {
+        grid-column: 2 / 3;
+        padding-left: 20px;
+        border-left: 1px solid #eee;
+    }
+    .game-buttons {
+        justify-content: flex-start;
+    }
+    .affix-list {
+        max-height: 250px; /* Slightly taller on desktop */
+    }
+}
+
+@media (max-width: 600px) {
+    .header-container h1 {
+        font-size: 2em;
+    }
+    .screen {
+        padding: 20px;
+    }
+    .base-word-display {
+        font-size: 2em;
+    }
+    .word-construction-area {
+        padding: 10px;
+    }
+    .game-buttons button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    .affix-list {
+        padding: 10px;
+        gap: 8px;
+    }
+    .affix-item {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* ─────────────────────────────────────────────────────
+   NEW RULES NEEDED FOR EDIT-AND-OVERRIDE FEATURE
+   ───────────────────────────────────────────────────── */
+
+/* 1. Generic “hidden” class (so <input id="manualWordInput" class="hidden"> really hides) */
+.hidden {
+    display: none;
+}
+
+/* 2. Small-button styling for the “✎ Edit” toggle */
+.small-btn {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.3rem;
+}
+
+/* ─────────────────────────────────────────────────────
+   HEADER‐SPECIFIC ADDITIONS (SUBTITLE + WATCHING TEXT)
+   ───────────────────────────────────────────────────── */
+
+/* Subtitle below the main title */
+.subtitle {
+    font-size: 1.75em;         /* slightly smaller than h1 */
+    color: #2c3e50;            /* matches the h1 color */
+    margin: 0;                 /* no extra space above/below */
+    padding-top: 8px;          /* small gap below h1 */
+}
+
+/* Italic line under subtitle */
+.subtitle-text {
+    font-size: 1em;            /* normal paragraph size */
+    color: #555;               /* darker gray for contrast */
+    margin-top: 4px;           /* slight gap below subtitle */
+    margin-bottom: 12px;       /* spacing before credit line */
+}
+
+/* Position the “Your Teacher is Watching Your Every Move!!!” graphic */
+.watching-text-image {
+    position: absolute;
+    top: 10px;       /* adjust as needed */
+    right: 10px;     /* small padding from the right edge */
+    width: 120px;    /* scale down/up to taste */
+    height: auto;    /* preserve the aspect ratio */
+    z-index: 2;      /* ensure it sits above the header background */
+}
